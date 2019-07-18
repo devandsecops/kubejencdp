@@ -130,7 +130,6 @@ stages{
             /usr/local/bin/kubectl apply -f $BASE_DIR/k8s/${IMAGE_NAME}/
             /usr/local/bin/kubectl rollout status --v=5 --watch=true -f $BASE_DIR/k8s/$IMAGE_NAME/$IMAGE_NAME-deployment.yml
             
-            gcloud auth revoke --all
             """
         }
         }
