@@ -116,7 +116,6 @@ stages{
         {
         sh """
             gcloud auth activate-service-account --key-file=${JENKINSGCLOUDCREDENTIAL}
-            sudo yum update kubectl
             gcloud config set compute/zone us-central1-a
             gcloud config set compute/region us-central1
             gcloud config set project ${GCLOUD_PROJECT_ID}
