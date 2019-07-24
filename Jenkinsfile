@@ -119,8 +119,8 @@ stages{
             ./process_files.sh "$GCLOUD_PROJECT_ID" "${IMAGE_NAME}" "${DOCKER_PROJECT_NAMESPACE}/${IMAGE_NAME}:${RELEASE_TAG}" "./${IMAGE_NAME}/" ${TIMESTAMP}
 
             cd $BASE_DIR/k8s/${IMAGE_NAME}/.
-            /usr/local/bin/kubectl create -f $BASE_DIR/k8s/${IMAGE_NAME}/
-            /usr/local/bin/kubectl rollout status --v=5 --watch=true -f $BASE_DIR/k8s/$IMAGE_NAME/$IMAGE_NAME-deployment.yml
+            /usr/local/bin/kubectl delete -f $BASE_DIR/k8s/${IMAGE_NAME}/
+            #/usr/local/bin/kubectl rollout status --v=5 --watch=true -f $BASE_DIR/k8s/$IMAGE_NAME/$IMAGE_NAME-deployment.yml
             
             """
         }
